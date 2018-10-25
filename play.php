@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">  
-	<title>Soloäventyr - Spela</title>
+	<title>Pasta Alfredos Äventyr - Spela</title>
 	<link href="https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans" rel="stylesheet"> 
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -18,16 +18,7 @@
 </nav>	
 <main class="content">
 	<section>
-		<h1>Spela</h1>
-<!--
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit hic aliquid nostrum quibusdam veritatis? Eaque accusantium odit id deserunt, quae minima adipisci nesciunt illum ipsa ea placeat, earum laboriosam corrupti.</p>
-		<footer class="gotopagelinks">
-			<p>
-				<a href="play.php?page=1">Nästa sida</a>
-				<a href="play.php?page=2">Gå till sidan</a>
-			</p>
-		</footer>
--->
+		<h1></h1>
 <?php
 	include_once 'include/dbinfo.php';
 
@@ -49,8 +40,8 @@
 
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-		echo "<pre>" . print_r($row,1) . "</pre>";
-
+		//echo "<pre>" . print_r($row,1) . "</pre>";
+		echo "<p>" . $row['text'] . "</p>";
 		$stmt = $dbh->prepare("SELECT * FROM storylinks WHERE storyid = :id");
 		$stmt->bindParam(':id', $filteredPage);
 		$stmt->execute();
@@ -61,9 +52,9 @@
 			echo "<a href= \" ?page=" . $val['target'] . "\"> " . $val['text'] . "<br></a>";
 		}
 
-		echo "<pre>" . print_r($row,1) . "</pre>";
+		//echo "<pre>" . print_r($row,1) . "</pre>";
 
-		echo "<p>Requested page " . $filteredPage . "</p>";
+		//echo "<p>Requested page " . $filteredPage . "</p>";
 	} elseif(isset($_SESSION['page'])) {
 		// TODO load page from db
 		// use for returning player / cookie

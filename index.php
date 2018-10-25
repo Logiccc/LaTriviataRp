@@ -13,13 +13,13 @@
 <body>
 <nav id="navbar">
 	<a class="active" href="index.php">Hem</a>
-	<a href="play.php">Spela</a>
+	<a href="play.php?page=1">Spela</a>
 	<a href="edit.php">Redigera</a>
 </nav>	
 <main class="content">
 	<section>
-		<h1>Soloäventyr - La Traviata</h1>
-		<p>Välkommen till sidan om...</p>
+		<h1>Pasta Alfredos Äventyr</h1>
+		<p></p>
 <?php
 
 
