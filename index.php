@@ -8,18 +8,34 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">  
 	<title>Soloäventyr</title>
 	<link href="https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans" rel="stylesheet"> 
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+
+
 </head>
 <body>
-<nav id="navbar">
-	<a class="active" href="index.php">Hem</a>
-	<a href="play.php?page=1">Spela</a>
-	<a href="edit.php">Redigera</a>
+	
+<nav class="navbar navbar-primary navbar-expand-lg bg-light border border-dark">
+
+	<a class="btn btn-dark mx-2 py-1" href="index.php">Hem</a>
+	<a class="btn btn-dark mx-2 py-1" href="play.php?page=1">Spela</a>
+	<a class="btn btn-dark mx-2 py-1" href="edit.php">Redigera</a>
 </nav>	
+	
 <main class="content">
 	<section>
-		<h1>Pasta Alfredos Äventyr</h1>
-		<p></p>
+		<div class="container-fluid my-5">
+    		<div class="row text-center">
+        	<div class="col">
+			<h1>Pasta Alfredos Äventyr</h1>
+		</div>
+	</div>
+	<div class="row text-center">
+		<div class="col">
+			<p>(todo: forklaera)</p>
+		</div>
+	</div>
+</div>
 <?php
 
 

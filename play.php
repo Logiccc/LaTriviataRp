@@ -8,17 +8,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">  
 	<title>Pasta Alfredos Äventyr - Spela</title>
 	<link href="https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans" rel="stylesheet"> 
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
-<nav id="navbar">
-	<a href="index.php">Hem</a>
-	<a class="active" href="play.php?page=1">Spela</a>
-	<a href="edit.php">Redigera</a>
+<nav class="navbar navbar-primary navbar-expand-lg bg-light border border-dark">
+
+	<a class="btn btn-dark mx-2 py-1" href="index.php">Hem</a>
+	<a class="btn btn-dark mx-2 py-1" href="play.php?page=1">Spela</a>
+	<a class="btn btn-dark mx-2 py-1" href="edit.php">Redigera</a>
 </nav>	
 <main class="content">
 	<section>
-		<h1></h1>
+		
 <?php
 	include_once 'include/dbinfo.php';
 
@@ -41,15 +42,41 @@
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 		//echo "<pre>" . print_r($row,1) . "</pre>";
-		echo "<p>" . $row['text'] . "</p>";
+		echo "<div class='container-fluid'>
+    				<div class='row text-center'>
+    				<div class='col-3'>
+    				</div>
+        				<div class='col-6'>
+							<p class='mt-3'>" . $row['text'] . "</p> 
+						</div>
+						<div class='col-3'>
+						</div>
+					</div>
+			</div>";
 		$stmt = $dbh->prepare("SELECT * FROM storylinks WHERE storyid = :id");
 		$stmt->bindParam(':id', $filteredPage);
 		$stmt->execute();
 
 		$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		/*
+				div class='container-fluid'>
+    			<div class='row'>
+        		<div class='col'>
+        */
 
 		foreach ($row as $val) {
-			echo "<a href= \" ?page=" . $val['target'] . "\"> " . $val['text'] . "<br></a>";
+			echo "<div class='container-fluid'>
+    			<div class='row'>
+    			<div class='col-3'>
+    			</div>
+        		<div class='col-6 text-center'>
+			<a type='button' class='btn mb-3 btn-outline-dark' href= \" ?page=" . $val['target'] . "\"> " . $val['text'] . "<br></a>
+			</div>
+			<div class='col-3'>
+			</div>
+			</div>
+			</div>";
+
 		}
 
 		//echo "<pre>" . print_r($row,1) . "</pre>";

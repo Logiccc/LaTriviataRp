@@ -9,15 +9,16 @@
 	<title>Soloäventyr - Redigera</title>
 	<link href="https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans" rel="stylesheet"> 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
-<nav id="navbar">
-	<a href="index.php">Hem</a>
-	<a href="play.php?page=1">Spela</a>
-	<a class="active" href="edit.php">Redigera</a>
+<nav class="navbar navbar-primary navbar-expand-lg bg-light border border-dark">
+
+	<a class="btn btn-dark mx-2 py-1" href="index.php">Hem</a>
+	<a class="btn btn-dark mx-2 py-1" href="play.php?page=1">Spela</a>
+	<a class="btn btn-dark mx-2 py-1" href="edit.php">Redigera</a>
 </nav>	
-<main class="content">
+<main class="container-fluid text-center">
 	<section>
 		<h1>Redigera</h1>
 
@@ -50,7 +51,7 @@
 
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	foreach ($row as $value) {
-		echo "<tr>";
+		echo "<div class='container-fluid text-center'<tr>";
 		echo "<td>" . $value['id'] . "</td>";
 		echo "<td>" . substr($value['text'], 0, 40) . "...</td>"; // substr pajjar teckenkodning?
 		echo "<td>" . $value['place'] . "</td>";
@@ -120,7 +121,7 @@
 		$stmt->execute();
 		$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		foreach ($row as $value) {
-			echo "<pre>" . print_r($value,1) . "</pre>";
+			echo "<pre>" . print_r($value,1) . "</pre></div>";
 		}
 	}
 ?>	
