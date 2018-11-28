@@ -32,10 +32,12 @@
 	</div>
 	<div class="row text-center">
 		<div class="col">
-			<p>(todo: forklaera)</p>
+			<p>(todo: Förklara vad spelet är för något)</p>
+			<img src="logga.png" alt="fak ju">
 		</div>
 	</div>
 </div>
+</section>
 <?php
 
 

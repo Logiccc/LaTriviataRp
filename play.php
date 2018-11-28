@@ -70,7 +70,7 @@
     			<div class='col-3'>
     			</div>
         		<div class='col-6 text-center'>
-			<a type='button' class='btn mb-3 btn-outline-dark' href= \" ?page=" . $val['target'] . "\"> " . $val['text'] . "<br></a>
+			<a class='btn mb-3 btn-outline-dark' href= \" ?page=" . $val['target'] . "\"> " . $val['text'] . "<br></a>
 			</div>
 			<div class='col-3'>
 			</div>
@@ -90,6 +90,7 @@
 	}
 
 ?>
+</section>
 </main>
 <script src="js/navbar.js"></script>
 </body>
